@@ -28,9 +28,3 @@ include (GenerateExportHeader)
 
 add_library(${PROJECT_NAME} SHARED ${sdk_srcs} ${srcs})
 
-GENERATE_EXPORT_HEADER( ${PROJECT_NAME}
-             BASE_NAME ${PROJECT_NAME}
-             EXPORT_MACRO_NAME MyLibrary_EXPORT
-             EXPORT_FILE_NAME MyLibrary_Export.h
-             STATIC_DEFINE MyLibrary_BUILT_AS_STATIC
-)
