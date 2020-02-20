@@ -23,10 +23,16 @@ steps:
 
 # CMake
 # Build with the CMake cross-platform build system
+
 - task: CMake@1
   inputs:
     workingDirectory: 'Bruno_Bordi/db_to_voltage'
-    #cmakeArgs: # Optional
+    cmakeArgs: '..'
+
+- task: CMake@1
+  inputs:
+    workingDirectory: 'Bruno_Bordi/db_to_voltage'
+    cmakeArgs: '--build . --config Release'
 
 - task: VSBuild@1
   inputs:
