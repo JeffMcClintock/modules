@@ -21,6 +21,13 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
+# CMake
+# Build with the CMake cross-platform build system
+- task: CMake@1
+  inputs:
+    workingDirectory: 'Bruno_Bordi/db_to_voltage'
+    #cmakeArgs: # Optional
+
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
