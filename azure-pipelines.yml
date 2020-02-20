@@ -26,7 +26,7 @@ steps:
 - task: CMake@1
   inputs:
     workingDirectory: 'Bruno_Bordi/db_to_voltage'
-    #cmakeArgs: # Optional
+    cmakeArgs: '--build . --config Release'
 
 - task: VSBuild@1
   inputs:
