@@ -5,10 +5,6 @@ set(sdk_folder
     ../../se_sdk3
     )
 
-include_directories(
-    ${sdk_folder}
-    )
-
 set(sdk_srcs
      ${sdk_folder}/mp_sdk_common.cpp
      ${sdk_folder}/mp_sdk_audio.cpp
@@ -24,7 +20,13 @@ set(srcs
     module.rc
     )
 
+include_directories(
+    ${sdk_folder}
+    )
+
 include (GenerateExportHeader)
+
+set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
 
 add_library(${PROJECT_NAME} SHARED ${sdk_srcs} ${srcs})
 
